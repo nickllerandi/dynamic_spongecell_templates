@@ -45,7 +45,7 @@ function onReady() {
     f3_subText.innerHTML = spongeapi.getDynamicText('f3_subline');
     
     pricing.innerHTML = spongeapi.getDynamicText('Pricing');
-    cta.innerHTML = spongeapi.getDynamicText('CTA');
+    cta.innerHTML = spongeapi.getDynamicText('cta');
     imageContainer.style.backgroundImage = "url('" + imageDevice + "')";
     //bgContainer.style.backgroundImage = "url('" + bg + "')";
 
