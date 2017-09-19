@@ -56,7 +56,9 @@ function onReady() {
     pricing.innerHTML = spongeapi.getDynamicText('legal');
     cta.innerHTML = spongeapi.getDynamicText('cta');
     imageContainer.style.backgroundImage = "url('" + imageDevice + "')";
-    bgContainer.style.backgroundImage = "url('" + bg + "')";
+    
+//    DYNAMIC IMAGE
+//    bgContainer.style.backgroundImage = "url('" + bg + "')";
 
     //    ******************************* look for variables *********************************** 
 
