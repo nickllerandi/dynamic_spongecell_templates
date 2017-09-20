@@ -20,14 +20,13 @@
     	width: 300px;
     	height: 600px;
     }
-    #head,
-    #sub,
-    
+    #head, #head2, #head3,
+    #sub, #sub2, #sub3,    
     #cta {
         position: absolute;
-        left: 15px;
+        left: -255px;
         top: 315px;
-        width: 270px;
+        width: 230px;
         display: none;
     }
     #ctaText, #ctaCaret{
@@ -71,30 +70,33 @@
         left: 15px;
     }
     
-    #head {
+    #head, #head2, #head3 {
         font-family: NHG75, "Arial Black";
-        font-size: 25px;
+        font-size: 32px;
         color: black;
-        line-height: 100%;
-        letter-spacing: 0.03em;
+        line-height: 94%;
+        letter-spacing: 0em;
         text-align: left;
         font-weight: normal;
         font-style: normal;
     }
     
-    #sub {
+    #sub, #sub2, #sub3 {
         font-family: NHG75, "Arial Black";
-        font-size: 19px;
-        line-height: 100%;
+        font-size: 20px;
+        line-height: 95%;
     }
     
     #price {
         position: absolute;
         width: 128px;
-        left: 157px;
+        left: 158px;
         bottom:12px;
         font-family: HELV47, helvetica, sans-serif;
-        font-size: 9px;
+        font-size: 8px;
+        line-height: 125%;
+        visibility: hidden;
+        opacity: 0;
     }
     
     #cta {
@@ -135,14 +137,23 @@
 <body>
 	<div id="ad">
 	    <div id="backG"></div>
-	    <div id="head" style="display: block; font-size: 22px;">Your new <span class="device">Gear S3 frontier</span> is waiting.</div>
-	    <div id="sub" style="display: block; font-size: 17px; top: 367px;">Smartphones are better on the better network. Now with unlimited.</div>
+	    
+        <div id="head" style="display: block; font-size: 32px;"></div>
+        <div id="head2" style="font-size: 32px;"></div>
+        <div id="head3" style="font-size: 32px;"></div>
+
+	    <div id="sub" style="display: block; font-size: 17px; top: 367px;"></div>
+        <div id="sub2" style="top: 64px;"></div>
+        <div id="sub3" style="top: 64px;"></div>
+
 	    <div id="price" style="display: block;"></div>
 	    <div id="cta" style="top: 412px; display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 16px; left: 81.2656px;"></div></div>
 	    <div id="img" style="background-image: url(&quot;null&quot;);"></div>
 	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 274px; height: 20.4644px;"></div><!-- 0.9302 -->
 	</div>
-
-<script src="animate.js"></script>
-</body>
+    
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
+<script src="animate.js"></script></body>
 </html>
