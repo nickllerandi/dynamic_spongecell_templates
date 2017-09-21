@@ -296,9 +296,9 @@ function onReady() {
 //                checkText(cta);
 
 //HAVE NOT MOVED - JUST COMMENTED OUT                
-//                fixFontSize(headline);
-//                fixFontSize(f2_headline);                
-//                fixFontSize(f3_headline);
+                fixFontSize(headline);
+                fixFontSize(f2_headline);                
+                fixFontSize(f3_headline);
 //                
 //                fixFontSize(subText);
 //                fixFontSize(f2_subText);
