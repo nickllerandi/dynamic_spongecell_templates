@@ -24,7 +24,10 @@ function onReady() {
 
 
     //    ******************************* Default RuleSet *********************************** 
-    headline.maxLines = 2;
+    headline.maxLines = 3;
+    f2_headline.maxLines = 3;
+    f3_headline.maxLines = 3;
+
     subText.maxLines = 2;
     pricing.maxLines = 3;
     cta.maxLines = 2;
@@ -260,6 +263,7 @@ function onReady() {
                 checkVariables(pricing);
                 checkVariables(cta);
 
+//MOVED ABOVE
 //                checkText(headline);
 //                checkText(f2_headline);
 //                checkText(f3_headline);

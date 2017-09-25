@@ -183,23 +183,24 @@ function onReady() {
 
     }
 
-    fixFontSize(headline);
-    fixFontSize(f2_headline);
-    fixFontSize(f3_headline);
+//    fixFontSize(headline);
+//    fixFontSize(f2_headline);
+//    fixFontSize(f3_headline);
     
     fixFontSize(subText);
     fixFontSize(f2_subText);
     fixFontSize(f3_subText);
     
     fixFontSize(pricing);
-    fixFontSize(cta);
+//    fixFontSize(cta);
     //    ******************************* CARET PLACEMENT AND CONTAINER RESIZE ***********************************
 
     function caretPlacement(who, ctxt, ccar) {
         if (ctxt.innerHTML != "") {
             who.style.display = "block";
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
-            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
+//            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
+//            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
             getLeft(ccar, ctxt, 10);
         }
     }
