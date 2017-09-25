@@ -1,8 +1,15 @@
 function onReady() {
 
     var ad = document.getElementById('ad');
+    
     var headline = document.getElementById('head');
+    var f2_headline = document.getElementById('head2');
+    var f3_headline = document.getElementById('head3');
+    
     var subText = document.getElementById('sub');
+    var f2_subText = document.getElementById('sub2');
+    var f3_subText = document.getElementById('sub3');
+    
     var pricing = document.getElementById('price');
     var cta = document.getElementById('ctaText');
     var ctaContainer = document.getElementById('cta');
@@ -15,14 +22,14 @@ function onReady() {
     var fullPrice = spongeapi.getDynamicText('FULL_RETAIL_PRICE');
     var installmentPrice = spongeapi.getDynamicText('INSTALLMENT_PRICE');
     var twoYearPrice = spongeapi.getDynamicText('TWO_YEAR_PRICE');
-    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL300x250');
+    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL130x230');
     //var bg = spongeapi.getDynamicImage('Background_Image');
 
 
     //    ******************************* Default RuleSet *********************************** 
-    headline.maxLines = 2;
-    subText.maxLines = 2;
-    pricing.maxLines = 3;
+    headline.maxLines = 5;
+    subText.maxLines = 4;
+    pricing.maxLines = 6;
     cta.maxLines = 2;
     headline.minFontSize = 15;
     subText.minFontSize = 10;
@@ -32,14 +39,21 @@ function onReady() {
     //**************************************Initial HTML element load*****************************
 
 
-    headline.innerHTML = spongeapi.getDynamicText('Headline');
-    subText.innerHTML = spongeapi.getDynamicText('Subline');
-    if (moPrice != null) {
-        pricing.innerHTML = spongeapi.getDynamicText('Pricing');
-    }else{
-        pricing.innerHTML = spongeapi.getDynamicText('Pricing2y');
-    }
-    cta.innerHTML = spongeapi.getDynamicText('CTA');
+    headline.innerHTML = spongeapi.getDynamicText('f1_headline');
+    f2_headline.innerHTML = spongeapi.getDynamicText('f2_headline');
+    f3_headline.innerHTML = spongeapi.getDynamicText('f3_headline');
+    
+    subText.innerHTML = spongeapi.getDynamicText('f1_subline');
+    f2_subText.innerHTML = spongeapi.getDynamicText('f2_subline');
+    f3_subText.innerHTML = spongeapi.getDynamicText('f3_subline');
+    
+//    if (moPrice != null) {
+//        pricing.innerHTML = spongeapi.getDynamicText('Pricing');
+//    }else{
+//        pricing.innerHTML = spongeapi.getDynamicText('Pricing2y');
+//    }
+    pricing.innerHTML = spongeapi.getDynamicText('legal');
+    cta.innerHTML = spongeapi.getDynamicText('cta');
     imageContainer.style.backgroundImage = "url('" + imageDevice + "')";
     //bgContainer.style.backgroundImage = "url('" + bg + "')";
 
@@ -199,7 +213,8 @@ function onReady() {
         if (ctxt.innerHTML != "") {
             who.style.display = "block";
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
-            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
+//            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
+//            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
             getLeft(ccar, ctxt, 10);
         }
     }
@@ -238,26 +253,43 @@ function onReady() {
             cta.style.display = "block";
 
             checkVariables(headline);
+            checkVariables(f2_headline);
+            checkVariables(f3_headline);
+            
             checkVariables(subText);
+            checkVariables(f2_subText);
+            checkVariables(f3_subText);
+            
             checkVariables(pricing);
             checkVariables(cta);
 
             checkText(headline);
+            checkText(f2_headline);
+            checkText(f3_headline);
+            
             checkText(subText);
+            checkText(f2_subText);
+            checkText(f3_subText);
+            
             checkText(pricing);
             checkText(cta);
 
-            fixFontSize(headline);
+//            fixFontSize(headline);
             fixFontSize(subText);
             fixFontSize(pricing);
             fixFontSize(cta);
 
-            getTop(subText, headline, 15)
-            getTop(ctaContainer, subText, 15);
-            caretPlacement(ctaContainer, cta, ctaCaret);
-            getTop(pricing, ctaContainer, 15);
+            getTop(subText, headline, 10)
+            getTop(f2_subText, f2_headline, 10)
+            getTop(f3_subText, f3_headline, 10)
 
-            sizeLogo(headline);
+            getTop(ctaContainer, f3_subText, 10);
+            
+            caretPlacement(ctaContainer, cta, ctaCaret);
+            
+            getTop(pricing, ctaContainer, 10);
+
+//            sizeLogo(headline);
 
         },
     });

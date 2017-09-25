@@ -19,7 +19,7 @@ function onReady() {
     var fullPrice = spongeapi.getDynamicText('FULL_RETAIL_PRICE');
     var installmentPrice = spongeapi.getDynamicText('INSTALLMENT_PRICE');
     var twoYearPrice = spongeapi.getDynamicText('TWO_YEAR_PRICE');
-    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL300x250');
+    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL130x230');
     //var bg = spongeapi.getDynamicImage('Background_Image');
 
 
@@ -47,7 +47,7 @@ function onReady() {
     f2_subText.innerHTML = spongeapi.getDynamicText('f2_subline');
     f3_subText.innerHTML = spongeapi.getDynamicText('f3_subline');
     
-    pricing.innerHTML = spongeapi.getDynamicText('Pricing');
+    pricing.innerHTML = spongeapi.getDynamicText('legal');
     cta.innerHTML = spongeapi.getDynamicText('cta');
     imageContainer.style.backgroundImage = "url('" + imageDevice + "')";
     //bgContainer.style.backgroundImage = "url('" + bg + "')";
@@ -286,11 +286,12 @@ function onReady() {
                 fixFontSize(pricing);
                 fixFontSize(cta);
 
-                getTop(subText, headline, 13)
-                getTop(f2_subText, f2_headline, 13)
-                getTop(f3_subText, f3_headline, 13)
+                getTop(subText, headline, 13);
+                getTop(f2_subText, f2_headline, 13);
+                getTop(f3_subText, f3_headline, 13);
+                getTop(ctaContainer, f3_subText, 15);
+                getTop(pricing, ctaContainer, 15);
                 
-                getTop(ctaContainer, f3_subText, 17)
                 caretPlacement(ctaContainer, cta, ctaCaret);
             }
 
