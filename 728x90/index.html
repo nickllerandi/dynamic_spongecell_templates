@@ -22,7 +22,7 @@
 	    	height: 90px;
 	    }
         
-        #head,
+        #head, #head2, #head3,
         #sub
         {
             position: absolute;
@@ -50,18 +50,18 @@
         }
 	    #logo{
 	    	position: absolute;
-	        width: 10px;
-	        height: 10px;
-	        bottom: 8px;
-	        right: 370px;
+	        width: 72px;
+	        height: 16px;
+	        bottom: 10px;
+            left: 10px;
 	    }
 	    #logosrc {
 	    	position: absolute;
 	    	bottom: 0px;
 	    	right: 0px;
-	    	width: auto;
-	    	height: 19px;
-	    	max-width: 50px;
+	    	width: 72px;
+	    	height: auto;
+/*	    	max-width: 50px;*/
 	    }
         
         #img {
@@ -105,11 +105,11 @@
             position: absolute;
             display: none;
             font-family: NHG75, "Arial Black";
-            font-size: 16px;
-            line-height: 100%;
+            font-size: 14px;
+            line-height: 86%;
             width: 170px;
-            bottom:10px;
-            left:10px;
+            bottom:12px;
+            left:255px;
         }
         
         #ctaCaret {
@@ -145,13 +145,21 @@
 <body>
 	<div id="ad">
 	    <div id="backG"></div>
-	    <div id="head" style="display: block; font-size: 20px;">Your new <span class="device">Gear S3 frontier</span> is waiting.</div>
+	    <div id="head" style="display: block; font-size: 20px;"></div>
+	    <div id="head2" style="display: block; font-size: 20px;"></div>
+	    <div id="head3" style="display: block; font-size: 20px;"></div>
+        
 	    <div id="sub" style="display: block; font-size: 11px; top: 33px;">Smartphones are better on the better network. Now with unlimited.</div>
 	    <div id="price" style="display: block; left: 360px;"></div>
-	    <div id="cta" style="display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 16px; left: 81.2656px;"></div></div>
+	    <div id="cta" style="display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 15px; left: 81.2656px;"></div></div>
 	    <div id="img" style="background-image: url(&quot;null&quot;);"></div>
-	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 712px; height: 18.604px;"></div><!-- 0.9302 -->
+<!--	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 712px; height: 18.604px;"></div> 0.9302 -->
+	    <div id="logo"><img id="logosrc" src="verizon_logo-728x90.svg"></div>
 	</div>
 
-
-</body></html>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
+<script src="animate.js"></script>
+</body>
+</html>

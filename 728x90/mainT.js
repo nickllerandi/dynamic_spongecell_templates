@@ -1,7 +1,11 @@
 function onReady() {
 
     var ad = document.getElementById('ad');
+    
     var headline = document.getElementById('head');
+    var f2_headline = document.getElementById('head2');
+    var f3_headline = document.getElementById('head3');
+    
     var subText = document.getElementById('sub');
     var pricing = document.getElementById('price');
     var cta = document.getElementById('ctaText');
@@ -20,9 +24,9 @@ function onReady() {
 
 
     //    ******************************* Default RuleSet *********************************** 
-    headline.maxLines = 1;
-    subText.maxLines = 1;
-    pricing.maxLines = 3;
+    headline.maxLines = 3;
+    subText.maxLines = 3;
+    pricing.maxLines = 6;
     cta.maxLines = 1;
     headline.minFontSize = 8;
     subText.minFontSize = 8;
@@ -32,7 +36,10 @@ function onReady() {
     //**************************************Initial HTML element load*****************************
 
 
-    headline.innerHTML = spongeapi.getDynamicText('Headline').replace(/(\<br\>)/gi, " ");
+    headline.innerHTML = spongeapi.getDynamicText('f1_headline').replace(/(\<br\>)/gi, " ");
+    f2_headline.innerHTML = spongeapi.getDynamicText('f2_headline').replace(/(\<br\>)/gi, " ");
+    f3_headline.innerHTML = spongeapi.getDynamicText('f3_headline').replace(/(\<br\>)/gi, " ");
+    
     subText.innerHTML = spongeapi.getDynamicText('Subline').replace(/(\<br\>)/gi, " ");
     if (moPrice != null) {
         pricing.innerHTML = spongeapi.getDynamicText('Pricing');
