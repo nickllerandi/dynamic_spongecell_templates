@@ -20,12 +20,12 @@
     	width: 160px;
     	height: 600px;
     }
-    #head,
-    #sub,
+    #head, #head2, #head3,
+    #sub, #sub2, #sub3,
     #price,
     #cta {
         position: absolute;
-        left: 15px;
+        left: -160px;
         top: 315px;
         width: 130px;
         display: none;
@@ -45,18 +45,18 @@
     }
     #logo{
     	position: absolute;
-        width: 10px;
-        height: 10px;
-        bottom: 15px;
-        left: 13px;
+        width: 89px;
+        height: 20px;
+        bottom: 14px;
+        left: 15px;
     }
     #logosrc {
     	position: absolute;
     	bottom: 0px;
     	left: 0px;
-    	width: auto;
-    	height: 19px;
-    	max-width: 50px;
+    	width: 89;
+    	height: auto;
+/*    	max-width: 50px;*/
     }
 
     
@@ -71,33 +71,36 @@
         left: 15px;
     }
     
-    #head {
+    #head, #head2, #head3 {
         font-family: NHG75, "Arial Black";
         font-size: 25px;
         color: black;
-        line-height: 100%;
-        letter-spacing: 0.03em;
+        line-height: 96%;
+        letter-spacing: 0em;
         text-align: left;
         font-weight: normal;
         font-style: normal;
     }
     
-    #sub {
+    #sub, #sub2, #sub3 {
         font-family: NHG75, "Arial Black";
-        font-size: 19px;
-        line-height: 100%;
+        font-size: 16px;
+        line-height: 94%;
     }
     
     #price {
         font-family: HELV47, helvetica, sans-serif;
-        font-size: 9px;
+        font-size: 8px;
+        left: 15px !important;
+        visibility: hidden;
+        opacity: 0;
     }
     
     #cta {
         display: none;
         font-family: NHG75,"Arial Black";
         font-size: 16px;
-        line-height: 100%;
+        line-height: 94%;
     }
     #ctaCaret{
         background-image: url(caret.png);
@@ -113,9 +116,11 @@
         vertical-align: 4px;
     }
     
+/*
     .device {
         white-space: nowrap;
     }
+*/
     </style>
     <script type="text/javascript" src="mainT.js"></script>
     <script type="text/javascript" src="webFontLoader.js"></script>
@@ -131,13 +136,24 @@
 <body>
 	<div id="ad">
 	    <div id="backG"></div>
-	    <div id="head" style="display: block; font-size: 15px;">Your new <span class="device">Gear S3 frontier</span> is waiting.</div>
-	    <div id="sub" style="display: block; font-size: 10px; top: 375px;">Smartphones are better on the better network. Now with unlimited.</div>
+	    <div id="head" style="display: block; font-size: 25px;"></div>
+	    <div id="head2" style="display: block; font-size: 25px;"></div>
+	    <div id="head3" style="display: block; font-size: 25px;"></div>
+	    
+        <div id="sub" style="display: block; font-size: 16px; top: 375px;"></div>
+        <div id="sub2" style="display: block; font-size: 16px; top: 375px;"></div>
+        <div id="sub3" style="display: block; font-size: 16px; top: 375px;"></div>
+        
 	    <div id="price" style="display: block; top: 436px;"></div>
-	    <div id="cta" style="top: 420px; display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 16px; left: 81.2656px;"></div></div>
+	    <div id="cta" style="top: 420px; display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 15px; left: 81.2656px;"></div></div>
 	    <div id="img" style="background-image: url(&quot;null&quot;);"></div>
-	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 134px; height: 13.953px;"></div><!-- 0.9302 -->
+<!--	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 134px; height: 13.953px;"></div> 0.9302 -->
+	    <div id="logo"><img id="logosrc" src="verizon_logo-160x600.svg"></div>
 	</div>
 
-
-</body></html>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
+<script src="animate.js"></script>
+</body>
+</html>

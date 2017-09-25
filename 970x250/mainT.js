@@ -19,7 +19,7 @@ function onReady() {
     var fullPrice = spongeapi.getDynamicText('FULL_RETAIL_PRICE');
     var installmentPrice = spongeapi.getDynamicText('INSTALLMENT_PRICE');
     var twoYearPrice = spongeapi.getDynamicText('TWO_YEAR_PRICE');
-    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL300x250');
+    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL130x230');
     //var bg = spongeapi.getDynamicImage('Background_Image');
 
 
