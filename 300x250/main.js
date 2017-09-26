@@ -22,7 +22,7 @@ function onReady() {
     var fullPrice = spongeapi.getDynamicText('FULL_RETAIL_PRICE');
     var installmentPrice = spongeapi.getDynamicText('INSTALLMENT_PRICE');
     var twoYearPrice = spongeapi.getDynamicText('TWO_YEAR_PRICE');
-    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL130x230');
+    var imageDevice = spongeapi.getDynamicImage('MAIN_IMAGE_URL110x220');
     var bg = spongeapi.getDynamicImage('Background_Image');
 
 
@@ -201,7 +201,7 @@ function onReady() {
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
 //            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
 //            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 10);
+            getLeft(ccar, ctxt, 8.5);
         }
     }
     caretPlacement(ctaContainer, cta, ctaCaret);
@@ -232,7 +232,7 @@ function onReady() {
     
     
 //    getTop(ctaContainer, pricing, 15);
-    getTop(ctaContainer, f3_subText, 10);    
-    getTop(pricing, ctaContainer, 10);
+    getTop(ctaContainer, f3_subText, 12);    
+    getTop(pricing, ctaContainer, 8);
 
 }
