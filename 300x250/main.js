@@ -201,7 +201,7 @@ function onReady() {
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
 //            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
 //            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 10);
+            getLeft(ccar, ctxt, 8.5);
         }
     }
     caretPlacement(ctaContainer, cta, ctaCaret);
@@ -232,7 +232,7 @@ function onReady() {
     
     
 //    getTop(ctaContainer, pricing, 15);
-    getTop(ctaContainer, f3_subText, 10);    
-    getTop(pricing, ctaContainer, 10);
+    getTop(ctaContainer, f3_subText, 12);    
+    getTop(pricing, ctaContainer, 8);
 
 }
