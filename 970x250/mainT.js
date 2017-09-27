@@ -202,7 +202,7 @@ function onReady() {
             who.style.display = "block";
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
             ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 10);
+            getLeft(ccar, ctxt, 9);
         }
     }
 
@@ -289,7 +289,7 @@ function onReady() {
                 getTop(subText, headline, 13);
                 getTop(f2_subText, f2_headline, 13);
                 getTop(f3_subText, f3_headline, 13);
-                getTop(ctaContainer, f3_subText, 15);
+                getTop(ctaContainer, f3_subText, 14);
                 getTop(pricing, ctaContainer, 15);
                 
                 caretPlacement(ctaContainer, cta, ctaCaret);
