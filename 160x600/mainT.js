@@ -215,7 +215,7 @@ function onReady() {
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
 //            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
 //            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 10);
+            getLeft(ccar, ctxt, 8);
         }
     }
 
@@ -283,7 +283,7 @@ function onReady() {
             getTop(f2_subText, f2_headline, 10)
             getTop(f3_subText, f3_headline, 10)
 
-            getTop(ctaContainer, f3_subText, 10);
+            getTop(ctaContainer, f3_subText, 12);
             
             caretPlacement(ctaContainer, cta, ctaCaret);
             
