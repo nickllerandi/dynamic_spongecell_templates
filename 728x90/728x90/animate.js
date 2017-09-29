@@ -12,7 +12,7 @@ tl1.to('#head', .75, { left: 10, ease: Power2.easeOut})
 
     .to('#head3', .75, { left: 10, ease: Power2.easeOut}, "-=.5")       
     .to('#sub3', .75, { left: 255, ease: Power2.easeOut}, "-=.5")       
-    .to('#cta', .75, { left: 10, ease: Power2.easeOut})
+    .to('#cta', .75, { left: 255, ease: Power2.easeOut})
     .to('#price', .75, { autoAlpha: 1});
 
 

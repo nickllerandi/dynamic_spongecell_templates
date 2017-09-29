@@ -6,4 +6,6 @@
 
 *fix legal fonts (use CDN?)
 
+*fix caret height
+
 
