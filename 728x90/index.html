@@ -22,11 +22,11 @@
 	    	height: 90px;
 	    }
         
-        #head, #head2, #head3,
+        #head,
         #sub
         {
             position: absolute;
-            left: -330px;
+            left: 10px;
             top: 10px;
             width: 350px;
             display: none;
@@ -40,28 +40,27 @@
         }
         
         #backG {
-/*            position: absolute;*/
+            position: absolute;
             background-image: url(bg.jpg);
             width: 728px;
             height: 90px;
             background-repeat: no-repeat;
             background-size: cover;
-            left: 370px;
         }
 	    #logo{
 	    	position: absolute;
-	        width: 72px;
-	        height: 16px;
-	        bottom: 10px;
-	        left: 10px;
+	        width: 10px;
+	        height: 10px;
+	        bottom: 8px;
+	        right: 370px;
 	    }
 	    #logosrc {
 	    	position: absolute;
 	    	bottom: 0px;
 	    	right: 0px;
-	    	width: 72;
-	    	height: auto;
-/*	    	max-width: 50px;*/
+	    	width: auto;
+	    	height: 19px;
+	    	max-width: 50px;
 	    }
         
         #img {
@@ -75,7 +74,7 @@
             left: 463px;
         }
         
-        #head, #head2, #head3 {
+        #head {
             font-family: NHG75, "Arial Black";
             font-size: 25px;
             color: black;
@@ -109,11 +108,11 @@
             line-height: 100%;
             width: 170px;
             bottom:10px;
-            left:-125px;
+            left:10px;
         }
         
         #ctaCaret {
-            background-image: url(caret.png);
+            background-image: url(caret.svg);
             background-position: bottom left;
             width: 30px;
             height: 30px;
@@ -145,30 +144,13 @@
 <body>
 	<div id="ad">
 	    <div id="backG"></div>
-	    
-        <div id="head" style="display: block; font-size: 20px;"></div>
-	    <div id="head2" style="display: block; font-size: 20px;"></div>
-	    <div id="head3" style="display: block; font-size: 20px;"></div>
-	    
-        <div id="sub" style="display: block; font-size: 11px; top: 36px;"></div>
-	    <div id="price" style="display: block; left: 360px;"></div>
-	    <div id="cta" style="display: block; height: 16px;"><div id="ctaText" style="display: block;">Shop now</div><div id="ctaCaret" style="height: 16px; left: 81.2656px;"></div></div>
-        
-<!--
-	    <div id="img" style="background-image: url(&quot;https://signal.cdn.spongecell.com/catalog_images/CE/8E/20/23/70/54/48/7A/9C/FE/36/9F/96/4E/0B/16744FD2F8BF8B801E1511A263FF8C3B3C.PNG&quot;);">
-        </div>
--->
-        
-        <div id="img" style="background-image: url(&quot;null&quot;);"></div>
-
-        
-<!--	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 712px; height: 21.3946px;"></div> 0.9302 -->
-	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" ></div>
+	    <div id="head" style="display: block; font-size: 22px;">Switch to the best network today. </div>
+	    <div id="sub" style="display: block; font-size: 11px; top: 35px;">Get your Samsung Galaxy S6.</div>
+	    <div id="price" style="display: block; left: 295.906px;">/mo for 24 months.<br>0% APR. Full price: </div>
+	    <div id="cta" style="display: block; height: 16px;"><div id="ctaText" style="display: block;">Learn More</div><div id="ctaCaret" style="height: 16px; left: 91.8438px;"></div></div>
+	    <div id="img" style="background-image: url(&quot;https://signal-ssl.cdn.spongecell.com/catalog_images/C6/FA/8D/4D/7D/4D/E8/73/34/B6/72/0B/8E/40/49/BB9EE446A2F111F728B5F4C4ECEB9AB8E0.PNG&quot;);"></div>
+	    <div id="logo"><img id="logosrc" src="verizon_logo.svg" style="max-width: 712px; height: 20.4644px;"></div><!-- 0.9302 -->
 	</div>
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
-<script src="animate.js"></script>
-</body>
-</html>
+
+</body></html>
