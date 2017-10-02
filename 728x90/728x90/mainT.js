@@ -201,8 +201,8 @@ function onReady() {
         if (ctxt.innerHTML != "") {
             who.style.display = "block";
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
-            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 9);
+//            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
+            getLeft(ccar, ctxt, 7);
         }
     }
 
