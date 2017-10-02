@@ -231,7 +231,7 @@ function onReady() {
         if (ctxt.innerHTML != "") {
             who.style.display = "block";
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
-            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
+//            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
             getLeft(ccar, ctxt, 9);
         }
     }
@@ -310,7 +310,7 @@ function onReady() {
                 getTop(subText, headline, 10)
                 getTop(f2_subText, f2_headline, 10)
                 getTop(f3_subText, f3_headline, 10)
-                getTop(ctaContainer, f3_subText, 11);
+                getTop(ctaContainer, f3_subText, 10);
 //                getTop(pricing, ctaContainer, 10);
                 
                 caretPlacement(ctaContainer, cta, ctaCaret);

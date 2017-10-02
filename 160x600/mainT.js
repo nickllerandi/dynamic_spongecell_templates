@@ -215,7 +215,7 @@ function onReady() {
             who.style.height = ctxt.getBoundingClientRect().height + 'px';
 //            ADJUST CARET SIZE TO MATCH CTA FONT SIZE
 //            ccar.style.height = parseInt(window.getComputedStyle(ctxt).getPropertyValue("line-height"), 10) + 'px';
-            getLeft(ccar, ctxt, 8);
+            getLeft(ccar, ctxt, 7.5);
         }
     }
 

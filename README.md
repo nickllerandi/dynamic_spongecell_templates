@@ -2,10 +2,8 @@
 
 ## to-dos
 
-*get 728x90 working
-
-*fix legal fonts (use CDN?)
-
-*fix caret height
+-fix legal fonts (use CDN?)
+-fix caret height and distance from cta
+-move svgs out of html
 
 
