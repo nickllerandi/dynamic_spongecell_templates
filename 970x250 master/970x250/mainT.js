@@ -82,6 +82,17 @@ function onReady() {
 
 
     }
+    
+    checkVariables(headline);
+    checkVariables(f2_headline);
+    checkVariables(f3_headline);
+
+    checkVariables(subText);
+    checkVariables(f2_subText);
+    checkVariables(f3_subText);
+
+    checkVariables(pricing);
+    checkVariables(cta);
 
 
     //    ******************************* 2nd feed injection *********************************** 
@@ -193,6 +204,17 @@ function onReady() {
         }
 
     }
+    
+    fixFontSize(headline);
+    fixFontSize(f2_headline);
+    fixFontSize(f3_headline);
+
+    fixFontSize(subText);
+    fixFontSize(f2_subText);
+    fixFontSize(f3_subText);
+
+    fixFontSize(pricing);
+    fixFontSize(cta);
 
 
     //    ******************************* CARET PLACEMENT AND CONTAINER RESIZE ***********************************
@@ -205,6 +227,9 @@ function onReady() {
             getLeft(ccar, ctxt, 9);
         }
     }
+    
+//                caretPlacement(ctaContainer, cta, ctaCaret);
+
 
     //    ******************************* AUTO LOCATION ***********************************
 
@@ -220,6 +245,12 @@ function onReady() {
 
     }
 
+    getTop(subText, headline, 14);
+    getTop(f2_subText, f2_headline, 14);
+    getTop(f3_subText, f3_headline, 14);
+    getTop(ctaContainer, f3_subText, 19);
+    getTop(pricing, ctaContainer, 15);
+
     function getLeft(who, reference, offset) {
         if (who != null && reference != null) {
 
@@ -233,68 +264,68 @@ function onReady() {
     }
 
 
-    WebFont.load({
-        custom: {
-            families: ['NHG75', 'HELV47']
-        },
-        active: function () {
-            setTimeout(runBanner, 100);
-
-            function runBanner() {
-                headline.style.display = "block";
-                f2_headline.style.display = "block";
-                f3_headline.style.display = "block";
-                
-                subText.style.display = "block";
-                f2_subText.style.display = "block";
-                f3_subText.style.display = "block";
-                
-                pricing.style.display = "block";
-                cta.style.display = "block";
-
-                checkVariables(headline);
-                checkVariables(f2_headline);
-                checkVariables(f3_headline);
-                
-                checkVariables(subText);
-                checkVariables(f2_subText);
-                checkVariables(f3_subText);
-                
-                checkVariables(pricing);
-                checkVariables(cta);
-
-//MOVED ABOVE
-//                checkText(headline);
-//                checkText(f2_headline);
-//                checkText(f3_headline);
+//    WebFont.load({
+//        custom: {
+//            families: ['NHG75', 'HELV47']
+//        },
+//        active: function () {
+//            setTimeout(runBanner, 100);
+//
+//            function runBanner() {
+//                headline.style.display = "block";
+//                f2_headline.style.display = "block";
+//                f3_headline.style.display = "block";
 //                
-//                checkText(subText);
-//                checkText(f2_subText);
-//                checkText(f3_subText);
+//                subText.style.display = "block";
+//                f2_subText.style.display = "block";
+//                f3_subText.style.display = "block";
 //                
-//                checkText(pricing);
-//                checkText(cta);
-
-                fixFontSize(headline);
-                fixFontSize(f2_headline);
-                fixFontSize(f3_headline);
-                
-                fixFontSize(subText);
-                fixFontSize(f2_subText);
-                fixFontSize(f3_subText);
-                
-                fixFontSize(pricing);
-                fixFontSize(cta);
-
-                getTop(subText, headline, 14);
-                getTop(f2_subText, f2_headline, 14);
-                getTop(f3_subText, f3_headline, 14);
-                getTop(ctaContainer, f3_subText, 15);
-                getTop(pricing, ctaContainer, 15);
-                
-                caretPlacement(ctaContainer, cta, ctaCaret);
-            }
-
-        },
-    });
+//                pricing.style.display = "block";
+//                cta.style.display = "block";
+//
+////                checkVariables(headline);
+////                checkVariables(f2_headline);
+////                checkVariables(f3_headline);
+////                
+////                checkVariables(subText);
+////                checkVariables(f2_subText);
+////                checkVariables(f3_subText);
+////                
+////                checkVariables(pricing);
+////                checkVariables(cta);
+//
+////MOVED ABOVE
+////                checkText(headline);
+////                checkText(f2_headline);
+////                checkText(f3_headline);
+////                
+////                checkText(subText);
+////                checkText(f2_subText);
+////                checkText(f3_subText);
+////                
+////                checkText(pricing);
+////                checkText(cta);
+//
+////                fixFontSize(headline);
+////                fixFontSize(f2_headline);
+////                fixFontSize(f3_headline);
+////                
+////                fixFontSize(subText);
+////                fixFontSize(f2_subText);
+////                fixFontSize(f3_subText);
+////                
+////                fixFontSize(pricing);
+////                fixFontSize(cta);
+//
+////                getTop(subText, headline, 14);
+////                getTop(f2_subText, f2_headline, 14);
+////                getTop(f3_subText, f3_headline, 14);
+////                getTop(ctaContainer, f3_subText, 15);
+////                getTop(pricing, ctaContainer, 15);
+//                
+////                caretPlacement(ctaContainer, cta, ctaCaret);
+//            }
+//
+//        },
+//    });
 }
