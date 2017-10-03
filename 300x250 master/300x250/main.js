@@ -4,10 +4,12 @@ function onReady() {
     var headline = document.getElementById('head');
     var f2_headline = document.getElementById('head2');
     var f3_headline = document.getElementById('head3');
+    var f4_headline = document.getElementById('head4');
     
     var subText = document.getElementById('sub');
     var f2_subText = document.getElementById('sub2');
     var f3_subText = document.getElementById('sub3');
+    var f4_subText = document.getElementById('sub4');
     
     var pricing = document.getElementById('price');
     var cta = document.getElementById('ctaText');
@@ -30,10 +32,12 @@ function onReady() {
     headline.maxLines = 5;
     f2_headline.maxLines = 5;
     f3_headline.maxLines = 5;
+    f4_headline.maxLines = 5;
     
     subText.maxLines = 3;
     f2_subText.maxLines = 3;
     f3_subText.maxLines = 3;
+    f4_subText.maxLines = 3;
     
     pricing.maxLines = 3;
     cta.maxLines = 2;
@@ -48,10 +52,12 @@ function onReady() {
     headline.innerHTML = spongeapi.getDynamicText('f1_headline');
     f2_headline.innerHTML = spongeapi.getDynamicText('f2_headline');
     f3_headline.innerHTML = spongeapi.getDynamicText('f3_headline');
+    f4_headline.innerHTML = spongeapi.getDynamicText('f4_headline');
 
     subText.innerHTML = spongeapi.getDynamicText('f1_subline');
     f2_subText.innerHTML = spongeapi.getDynamicText('f2_subline');
     f3_subText.innerHTML = spongeapi.getDynamicText('f3_subline');
+    f4_subText.innerHTML = spongeapi.getDynamicText('f4_subline');
     
     pricing.innerHTML = spongeapi.getDynamicText('legal');
     cta.innerHTML = spongeapi.getDynamicText('cta');
@@ -93,10 +99,12 @@ function onReady() {
     checkVariables(headline);
     checkVariables(f2_headline);
     checkVariables(f3_headline);
+    checkVariables(f4_headline);
     
     checkVariables(subText);
     checkVariables(f2_subText);
     checkVariables(f3_subText);
+    checkVariables(f4_subText);
     
     checkVariables(pricing);
     checkVariables(cta);
@@ -151,10 +159,12 @@ function onReady() {
     checkText(headline);
     checkText(f2_headline);
     checkText(f3_headline);
+    checkText(f4_headline);
     
     checkText(subText);
     checkText(f2_subText);
     checkText(f3_subText);
+    checkText(f4_subText);
     
     checkText(pricing);
     checkText(cta);
@@ -190,6 +200,7 @@ function onReady() {
     fixFontSize(subText);
     fixFontSize(f2_subText);
     fixFontSize(f3_subText);
+    fixFontSize(f4_subText);
     
     fixFontSize(pricing);
 //    fixFontSize(cta);
@@ -226,13 +237,84 @@ function onReady() {
         }
     }
 
-    getTop(subText, headline, 10)
-    getTop(f2_subText, f2_headline, 10)
-    getTop(f3_subText, f3_headline, 10)
-    
-    
-//    getTop(ctaContainer, pricing, 15);
-    getTop(ctaContainer, f3_subText, 12);    
-    getTop(pricing, ctaContainer, 8);
+//    *************************************** ANIMATION ******************************************
 
+    var tl1 = new TimelineMax();
+    
+//    *************************************** 2 Frames ******************************************
+    
+    if (f3_headline.innerHTML === "" || f3_headline.innerHTML === null || f3_headline.innerHTML === undefined) {
+
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(ctaContainer, f2_subText, 12);    
+        getTop(pricing, ctaContainer, 8);
+        
+        tl1.to('#head', .75, { left: 16, ease: Power2.easeOut})
+            .to('#sub', .75, { left: 16, ease: Power2.easeOut}, "-=0.5")
+            .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
+
+            .to('#head2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+            .to('#sub2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+
+            .to('#cta', .75, { left: 16, ease: Power2.easeOut})
+            .to('#price', .75, { autoAlpha: 1});    
+        
+//    *************************************** 3 Frames ******************************************
+        
+    } else if (f4_headline.innerHTML === "" || f4_headline.innerHTML === null || f4_headline.innerHTML === undefined) {
+
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(f3_subText, f3_headline, 10)
+        getTop(ctaContainer, f3_subText, 12);    
+        getTop(pricing, ctaContainer, 8);
+        
+        tl1.to('#head', .75, { left: 16, ease: Power2.easeOut})
+        .to('#sub', .75, { left: 16, ease: Power2.easeOut}, "-=0.5")
+        .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+        .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
+
+        .to('#head2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#sub2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#head2', .75, { autoAlpha: 0}, "+=1.5")
+        .to('#sub2', .75, { autoAlpha: 0}, "-=0.7")
+
+        .to('#head3', .75, { left: 16, ease: Power2.easeOut}, "-=.5")       
+        .to('#sub3', .75, { left: 16, ease: Power2.easeOut}, "-=.5")       
+        .to('#cta', .75, { left: 16, ease: Power2.easeOut})
+        .to('#price', .75, { autoAlpha: 1});
+        
+//    *************************************** 4 Frames ******************************************
+        
+    } else {
+        
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(f3_subText, f3_headline, 10)
+        getTop(f4_subText, f4_headline, 10)
+        getTop(ctaContainer, f4_subText, 12);    
+        getTop(pricing, ctaContainer, 8);
+        
+        tl1.to('#head', .75, { left: 16, ease: Power2.easeOut})
+        .to('#sub', .75, { left: 16, ease: Power2.easeOut}, "-=0.5")
+        .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+        .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
+
+        .to('#head2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#sub2', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#head2', .75, { autoAlpha: 0}, "+=1.5")
+        .to('#sub2', .75, { autoAlpha: 0}, "-=0.7")
+        
+        .to('#head3', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#sub3', .75, { left: 16, ease: Power2.easeOut}, "-=.5")
+        .to('#head3', .75, { autoAlpha: 0}, "+=1.5")
+        .to('#sub3', .75, { autoAlpha: 0}, "-=0.7")
+
+        .to('#head4', .75, { left: 16, ease: Power2.easeOut}, "-=.5")       
+        .to('#sub4', .75, { left: 16, ease: Power2.easeOut}, "-=.5")       
+        .to('#cta', .75, { left: 16, ease: Power2.easeOut})
+        .to('#price', .75, { autoAlpha: 1});
+    }
 }

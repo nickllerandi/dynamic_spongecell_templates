@@ -1,10 +1,4 @@
 var tl1 = new TimelineMax();
-  
-//    tl1.to('#myAd_head', 2, { opacity: 1})
-//      .to('#head', 1.3, { left: 70, ease: Power2.easeOut })
-//      .to('#sub', 1.3, { top: 120, ease: Power2.easeOut}, '-=.5')
-//      .to('#price', 1.3, { top: 170, ease: Power2.easeOut}, '-=.5')
-//      .to('#myAd_head', 1, { opacity: 0})
 
 tl1.to('#head', .75, { left: 15, ease: Power2.easeOut})
     .to('#sub', .75, { left: 15, ease: Power2.easeOut}, "-=0.5")
