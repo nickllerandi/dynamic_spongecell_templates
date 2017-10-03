@@ -5,10 +5,12 @@ function onReady() {
     var headline = document.getElementById('head');
     var f2_headline = document.getElementById('head2');
     var f3_headline = document.getElementById('head3');
+    var f4_headline = document.getElementById('head4');
     
     var subText = document.getElementById('sub');
     var f2_subText = document.getElementById('sub2');
     var f3_subText = document.getElementById('sub3');    
+    var f4_subText = document.getElementById('sub4');    
     
     var pricing = document.getElementById('price');
     var cta = document.getElementById('ctaText');
@@ -30,12 +32,14 @@ function onReady() {
     headline.maxLines = 5;
     f2_headline.maxLines = 5;
     f3_headline.maxLines = 5;
+    f4_headline.maxLines = 5;
     
-    subText.maxLines = 3;
-    f2_subText.maxLines = 3;
-    f3_subText.maxLines = 3;
+    subText.maxLines = 5;
+    f2_subText.maxLines = 5;
+    f3_subText.maxLines = 5;
+    f4_subText.maxLines = 5;
     
-    pricing.maxLines = 3;
+    pricing.maxLines = 6;
     cta.maxLines = 2;
     headline.minFontSize = 15;
     subText.minFontSize = 10;
@@ -48,10 +52,12 @@ function onReady() {
     headline.innerHTML = spongeapi.getDynamicText('f1_headline');
     f2_headline.innerHTML = spongeapi.getDynamicText('f2_headline');
     f3_headline.innerHTML = spongeapi.getDynamicText('f3_headline');    
+    f4_headline.innerHTML = spongeapi.getDynamicText('f4_headline');    
     
     subText.innerHTML = spongeapi.getDynamicText('f1_subline');
     f2_subText.innerHTML = spongeapi.getDynamicText('f2_subline');
     f3_subText.innerHTML = spongeapi.getDynamicText('f3_subline');    
+    f4_subText.innerHTML = spongeapi.getDynamicText('f4_subline');    
     
 //    if (moPrice != null) {
 //        pricing.innerHTML = spongeapi.getDynamicText('Pricing');
@@ -91,10 +97,20 @@ function onReady() {
 
             }
         }
-
-
     }
+    
+    checkVariables(headline);
+    checkVariables(f2_headline);
+    checkVariables(f3_headline);
+    checkVariables(f4_headline);
 
+    checkVariables(subText);
+    checkVariables(f2_subText);
+    checkVariables(f3_subText); 
+    checkVariables(f4_subText); 
+
+    checkVariables(pricing);
+    checkVariables(cta);
 
     //    ******************************* 2nd feed injection *********************************** 
 
@@ -153,10 +169,12 @@ function onReady() {
         checkText(headline);
         checkText(f2_headline);
         checkText(f3_headline);
+        checkText(f4_headline);
 
         checkText(subText);
         checkText(f2_subText);
         checkText(f3_subText);
+        checkText(f4_subText);
 
         checkText(pricing);
         checkText(cta);
@@ -221,8 +239,20 @@ function onReady() {
             }
 
         }
-
     }
+    
+    fixFontSize(headline);
+    fixFontSize(f2_headline);                
+    fixFontSize(f3_headline);
+    fixFontSize(f4_headline);
+
+    fixFontSize(subText);
+    fixFontSize(f2_subText);
+    fixFontSize(f3_subText);
+    fixFontSize(f4_subText);
+
+    fixFontSize(pricing);
+    fixFontSize(cta);
 
 
     //    ******************************* CARET PLACEMENT AND CONTAINER RESIZE ***********************************
@@ -235,6 +265,9 @@ function onReady() {
             getLeft(ccar, ctxt, 9);
         }
     }
+    
+    caretPlacement(ctaContainer, cta, ctaCaret);
+
 
     //    ******************************* AUTO LOCATION ***********************************
 
@@ -247,7 +280,6 @@ function onReady() {
                 who.style.top = parseInt(window.getComputedStyle(reference).getPropertyValue("top").replace("px", ""), 10) + reference.getBoundingClientRect().height + "px";
             }
         }
-
     }
 
     function getLeft(who, reference, offset) {
@@ -258,67 +290,83 @@ function onReady() {
         }
     }
 
+//    *************************************** ANIMATION ******************************************
 
-    WebFont.load({
-        custom: {
-            families: ['NHG75', 'HELV47']
-        },
-        active: function () {
-            setTimeout(runBanner, 100);
+    var tl1 = new TimelineMax();
+    
+//    *************************************** 2 Frames ******************************************
+    
+    if (f3_headline.innerHTML === "" || f3_headline.innerHTML === null || f3_headline.innerHTML === undefined) {
 
-            function runBanner() {
-                headline.style.display = "block";
-                f2_headline.style.display = "block";
-                f3_headline.style.display = "block";
-                
-                subText.style.display = "block";
-                f2_subText.style.display = "block";                
-                f3_subText.style.display = "block";
-                
-                pricing.style.display = "block";
-                cta.style.display = "block";
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(ctaContainer, f2_subText, 10);    
+//        getTop(pricing, ctaContainer, 10);     
 
-                checkVariables(headline);
-                checkVariables(f2_headline);
-                checkVariables(f3_headline);
-                
-                checkVariables(subText);
-                checkVariables(f2_subText);
-                checkVariables(f3_subText); 
-                
-                checkVariables(pricing);
-                checkVariables(cta);
+        tl1.to('#head', .75, { left: 15, ease: Power2.easeOut})
+            .to('#sub', .75, { left: 15, ease: Power2.easeOut}, "-=0.5")
+            .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
 
-//MOVED ABOVE
-//                checkText(headline);
-//                checkText(subText);
-//                checkText(pricing);
-//                checkText(cta);
+            .to('#head2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")
+            .to('#sub2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")     
+            .to('#cta', .75, { left: 15, ease: Power2.easeOut})
+            .to('#price', .75, { autoAlpha: 1});
+        
+//    *************************************** 3 Frames ******************************************
+        
+    } else if (f4_headline.innerHTML === "" || f4_headline.innerHTML === null || f4_headline.innerHTML === undefined) {
 
-//HAVE NOT MOVED - JUST COMMENTED OUT                
-                fixFontSize(headline);
-                fixFontSize(f2_headline);                
-                fixFontSize(f3_headline);
-//                
-//                fixFontSize(subText);
-//                fixFontSize(f2_subText);
-//                fixFontSize(f3_subText);
-//                
-//                fixFontSize(pricing);
-//                fixFontSize(cta);
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(f3_subText, f3_headline, 10)
+        getTop(ctaContainer, f3_subText, 10);    
+//        getTop(pricing, ctaContainer, 8);
+        
+        tl1.to('#head', .75, { left: 15, ease: Power2.easeOut})
+            .to('#sub', .75, { left: 15, ease: Power2.easeOut}, "-=0.5")
+            .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
 
-                getTop(subText, headline, 10)
-                getTop(f2_subText, f2_headline, 10)
-                getTop(f3_subText, f3_headline, 10)
-                getTop(ctaContainer, f3_subText, 10);
-//                getTop(pricing, ctaContainer, 10);
-                
-                caretPlacement(ctaContainer, cta, ctaCaret);
+            .to('#head2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")
+            .to('#sub2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")
+            .to('#head2', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub2', .75, { autoAlpha: 0}, "-=0.7")
 
-//                sizeLogo(headline);
-                
-            }
+            .to('#head3', .75, { left: 15, ease: Power2.easeOut}, "-=.5")       
+            .to('#sub3', .75, { left: 15, ease: Power2.easeOut}, "-=.5")       
+            .to('#cta', .75, { left: 15, ease: Power2.easeOut})
+            .to('#price', .75, { autoAlpha: 1});
+        
+//    *************************************** 4 Frames ******************************************
+        
+    } else {
+        
+        getTop(subText, headline, 10)
+        getTop(f2_subText, f2_headline, 10)
+        getTop(f3_subText, f3_headline, 10)
+        getTop(f4_subText, f4_headline, 10)
+        getTop(ctaContainer, f4_subText, 10);    
+//        getTop(pricing, ctaContainer, 8);
+        
+        tl1.to('#head', .75, { left: 15, ease: Power2.easeOut})
+            .to('#sub', .75, { left: 15, ease: Power2.easeOut}, "-=0.5")
+            .to('#head', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub', .75, { autoAlpha: 0}, "-=0.7")
 
-        },
-    });
+            .to('#head2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")
+            .to('#sub2', .75, { left: 15, ease: Power2.easeOut}, "-=.5")
+            .to('#head2', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub2', .75, { autoAlpha: 0}, "-=0.7")
+
+            .to('#head3', .75, { left: 15, ease: Power2.easeOut}, "-=.5")       
+            .to('#sub3', .75, { left: 15, ease: Power2.easeOut}, "-=.5")  
+            .to('#head3', .75, { autoAlpha: 0}, "+=1.5")
+            .to('#sub3', .75, { autoAlpha: 0}, "-=0.7")
+
+            .to('#head4', .75, { left: 15, ease: Power2.easeOut}, "-=.5")       
+            .to('#sub4', .75, { left: 15, ease: Power2.easeOut}, "-=.5") 
+            .to('#cta', .75, { left: 15, ease: Power2.easeOut})
+            .to('#price', .75, { autoAlpha: 1});
+    }
 }
